@@ -1,0 +1,36 @@
+name: Weekly Essay (The Identity Layer)
+
+on:
+  schedule:
+    # Mondays 13:30 UTC — a fresh Medium-ready chapter to start the week
+    - cron: '30 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-essay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Publish this week's chapter
+        run: python publish_weekly_essay.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Shubham Safaya"
+          git config user.email "safayashubham@gmail.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No new chapter this week (manuscript may be fully published)."
+          else
+            git commit -m "Weekly essay: publish next chapter of The Identity Layer ($(date -u +%Y-%m-%d))"
+            git push
+          fi

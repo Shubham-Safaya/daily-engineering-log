@@ -2,8 +2,9 @@ name: Daily Engineering Log
 
 on:
   schedule:
-    # 6:00 AM CT = 11:00 UTC (CST) / 12:00 UTC (CDT)
-    - cron: '0 11 * * *'
+    # backbone stagger slot: 10:30 UTC (before mission-control at 10:45/11:00)
+    - cron: '30 10 * * *'
+    # - cron: '30 11 * * *' # UNCOMMENT after November DST change
   workflow_dispatch:
 
 permissions:
@@ -30,6 +31,11 @@ jobs:
 
       - name: Generate daily log entry
         run: python generate_log.py
+
+      - name: Append real automated facts (P3.2)
+        run: python auto_facts.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and push
         run: |

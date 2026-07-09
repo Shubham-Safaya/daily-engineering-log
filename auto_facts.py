@@ -76,7 +76,7 @@ def main():
         f"## Automated facts — {today.isoformat()}",
         "",
         f"- Commits (last 24h, authored): **{commits if commits is not None else 'n/a'}** across {len(active)} repo(s): {active_str}",
-        f"- identity-resolver PyPI downloads (last 30d): **{pypi if pypi is not None else 'n/a — not yet published'}**",
+        f"- identity-resolver PyPI downloads (last 30d): **{pypi if pypi is not None else 'live on PyPI since 2026-07-08 — awaiting first download data (pypistats backfills ~24-48h)'}**",
         f"- Job pipeline index size: **{jobs if jobs is not None else 'n/a'}**",
         f"- Sites on the daily-refresh backbone: us-consumer-pulse, portfolio stats, mission-control",
         "",

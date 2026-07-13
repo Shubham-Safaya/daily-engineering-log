@@ -5,3 +5,4 @@
 - 2026-06-22 — `2026-06-22__03-deterministic-and-probabilistic.md`
 - 2026-06-29 — `2026-06-29__04-the-graph-underneath.md`
 - 2026-07-06 — `2026-07-06__05-the-cookie-died-identity-did-not.md`
+- 2026-07-13 — `2026-07-13__06-clean-rooms-solve-less.md`

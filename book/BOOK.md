@@ -3,7 +3,7 @@
 
 *A book assembling itself in public, one weekly essay at a time, by Shubham Safaya.*
 
-*Manuscript regenerated 2026-07-20 15:25 UTC.*
+*Manuscript regenerated 2026-07-27 15:57 UTC.*
 
 ---
 
